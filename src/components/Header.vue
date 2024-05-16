@@ -4,8 +4,8 @@
   >
     <RouterLink
       to="/"
-      class="text-white p-3"
-      >WebinarWise
+      class="text-white p-3 font-bold text-xl hover:text-accent duration-300 stroke-black-2"
+      >WebinarWiseVue
     </RouterLink>
     <Searchbar />
     <HeaderNav />
