@@ -20,16 +20,17 @@
         />
       </div>
     </div>
-    <!-- <CourseCardButtons
+    <CourseCardButtons
       course="{course}"
       isPurchased="{isPurchased}"
       isLiked="{isLiked}"
-    /> -->
+    />
   </article>
 </template>
 <script setup>
   import { useRouter } from 'vue-router'
   import CourseCardHeader from './CourseCardHeader.vue'
+  import CourseCardButtons from './CourseCardButtons.vue'
   const router = useRouter()
   defineProps({
     course: {
