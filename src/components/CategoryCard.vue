@@ -1,6 +1,13 @@
 <template>
   <article
     class="bg-bgSecondary rounded-xl w-[285px] h-[414px] p-4 border border-muted hover:border-accent flex flex-col justify-between hover:scale-105 duration-300 cursor-pointer"
+    @click="
+      () =>
+        $router.push({
+          name: 'home',
+          query: { page: 1, perPage: 10, search: '', category: categorie.id },
+        })
+    "
   >
     <h1 class="text-primary text-2xl font-bold h-20">{{ categorie.name }}</h1>
     <img
@@ -15,10 +22,10 @@
   </article>
 </template>
 <script setup>
-  defineProps({
-    categorie: {
-      type: Object,
-      required: true,
-    },
-  })
+defineProps({
+  categorie: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
