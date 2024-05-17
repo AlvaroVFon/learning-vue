@@ -7,7 +7,7 @@
       type="text"
       :class="searchBarStyle"
       @input="handleSearch"
-      class="w-full p-2 rounded-l border bg-bgPrimary border-muted text-accent"
+      class="w-full p-2 rounded border bg-bgPrimary border-muted hover:border-accent text-accent duration-300"
     />
     <span class="p-3">
       <SearchIcon color="#42b883" />

@@ -8,10 +8,12 @@
       <CourseCard :course="course" />
     </template>
   </GridWrapper>
+  <Pagination />
 </template>
 <script setup>
-import CourseCard from '../components/CourseCard.vue';
-import GridWrapper from '../components/GridWrapper.vue';
+import CourseCard from '@/components/CourseCard.vue';
+import GridWrapper from '@/components/GridWrapper.vue';
+import Pagination from '@/components/Pagination.vue';
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '@/utils/WebinarApi';
