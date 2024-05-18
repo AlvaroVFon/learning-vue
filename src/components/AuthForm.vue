@@ -1,23 +1,24 @@
 <template>
-  <form class="w-96 flex flex-col gap-3">
+  <form
+    class="w-96 flex flex-col gap-3"
+    @submit="handleSubmit"
+  >
     <input
-      type="text"
+      type="email"
       :class="inputClass"
+      v-model="email"
     />
     <input
-      type="text"
+      type="password"
       :class="inputClass"
+      v-model="password"
     />
     <Button
       type="submit"
       label="Login"
-      :handleClick="handleLoading"
       :isLoading="loading"
     />
   </form>
-  <p class="text-accent">{{ email }}</p>
-
-  {{ password }}
 </template>
 <script setup>
   import { ref } from 'vue'
@@ -29,19 +30,23 @@
 
   const email = ref('')
   const password = ref('')
-  const handleLoading = (e) => {
+  const loading = ref(false)
+
+  const handleSubmit = (e) => {
     e.preventDefault()
-    loading.value = !loading.value
-  }
-  const handelChange = (e) => {
-    if (e.target.name === 'email') {
-      email.value = e.target.value
-    } else {
-      password.value = e.target.value
+    const Login = async () => {
+      loading.value = true
+      try {
+        console.log(email.value, password.value)
+        const response = await api.login(email.value, password.value)
+        console.log(response)
+      } catch (error) {
+        console.error(error)
+      } finally {
+        loading.value = false
+      }
     }
-  }
-  const handleSubmit = () => {
-    console.log(email.value, password.value)
+    Login()
   }
 </script>
 

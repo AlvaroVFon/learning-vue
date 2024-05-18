@@ -6,9 +6,9 @@ class WebinarApi {
       baseURL: API_URL,
     })
   }
-  async Login(email, password) {
+  async login(email, password) {
     const response = await this.axiosInstance
-      .post('/login', {
+      .post('/auth/login', {
         email,
         password,
       })

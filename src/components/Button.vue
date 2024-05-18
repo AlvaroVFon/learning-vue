@@ -1,13 +1,13 @@
 <template>
   <button
     @click="handleClick"
-    class="border border-accent text-accent font-bold py-2 px-4 rounded hover:bg-accent hover:text-white duration-300"
+    class="border border-accent text-accent font-bold py-2 px-4 rounded hover:bg-accent hover:text-white duration-300 flex justify-center items-center gap-4"
   >
     {{ label }}
     <SpinnerIcon
-      v-if="isLoading"
       :width="25"
       :height="25"
+      :isLoading="isLoading"
       color="white"
     />
   </button>
