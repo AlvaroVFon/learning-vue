@@ -21,7 +21,7 @@ class WebinarApi {
   async getCourses(url) {
     const response = await this.axiosInstance
       .get(`/courses${url}`)
-      .then((res) => res.data.results)
+      .then((res) => res.data)
       .catch((error) => {
         error
       })
