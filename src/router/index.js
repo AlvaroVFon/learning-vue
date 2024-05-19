@@ -10,6 +10,11 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      redirect: '/courses?page=1&perPage=10',
+    },
+    {
+      path: '/courses',
+      name: 'courses',
       component: CoursesView,
     },
     {

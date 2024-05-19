@@ -20,8 +20,8 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const handleSearch = (e) => {
-  router.replace({
-    name: 'home',
+  router.push({
+    name: 'courses',
     query: { page: 1, perPage: 10, search: e.target.value },
   });
 };

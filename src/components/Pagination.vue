@@ -33,33 +33,33 @@
   </div>
 </template>
 <script setup>
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
-  import FirstPageIcon from '@/components/icons/FirstPageIcon.vue'
-  import LastPageIcon from '@/components/icons/LastPageIcon.vue'
-  const router = useRouter()
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import FirstPageIcon from '@/components/icons/FirstPageIcon.vue';
+import LastPageIcon from '@/components/icons/LastPageIcon.vue';
+const router = useRouter();
 
-  defineProps({
-    totalPages: {
-      type: Number,
-      required: true,
-    },
-  })
-  const increment = () => {
-    page.value++
-    router.push({ query: { page: page.value, perPage: 10 } })
-    window.scrollTo(0, 0)
-  }
-  const decrement = () => {
-    page.value--
-    router.push({ query: { page: page.value, perPage: 10 } })
-    window.scrollTo(0, 0)
-  }
-  const page = ref(1)
+defineProps({
+  totalPages: {
+    type: Number,
+    required: true,
+  },
+});
+const increment = () => {
+  page.value++;
+  router.push({ query: { page: page.value, perPage: 10 } });
+  window.scrollTo(0, 0);
+};
+const decrement = () => {
+  page.value--;
+  router.push({ query: { page: page.value, perPage: 10 } });
+  window.scrollTo(0, 0);
+};
+const page = ref(1);
 </script>
 <style scoped>
-  button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 </style>
