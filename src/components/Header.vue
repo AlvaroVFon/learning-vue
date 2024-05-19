@@ -4,7 +4,7 @@
   >
     <RouterLink
       to="/"
-      class="text-white p-3 font-bold text-xl hover:text-accent duration-300 stroke-black-2"
+      class="text-primary p-3 font-bold text-xl hover:text-accent duration-300 stroke-black-2"
       >WebinarWiseVue
     </RouterLink>
     <Searchbar />
@@ -12,8 +12,8 @@
   </header>
 </template>
 <script setup>
-  import HeaderNav from './HeaderNav.vue'
-  import Searchbar from './Searchbar.vue'
-  import { RouterLink } from 'vue-router'
+import HeaderNav from './HeaderNav.vue';
+import Searchbar from './Searchbar.vue';
+import { RouterLink } from 'vue-router';
 </script>
 <style scoped></style>
