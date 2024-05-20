@@ -18,6 +18,19 @@ class WebinarApi {
       });
     return response;
   }
+  async register(userName, email, password) {
+    const response = await this.axiosInstance
+      .post('/auth/register', {
+        name,
+        email,
+        password,
+      })
+      .then((res) => res.data)
+      .catch((error) => {
+        error.response;
+      });
+    return response;
+  }
   async getCourses(url) {
     const response = await this.axiosInstance
       .get(`${url}`)

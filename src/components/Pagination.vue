@@ -8,7 +8,7 @@
       <span class="text-accent">{{ totalPages }}</span>
     </p>
     <div class="text-accent w-full flex justify-center items-center gap-3">
-      <button>
+      <button @click="toFirstPage">
         <FirstPageIcon color="#42b883" />
       </button>
       <button
@@ -26,7 +26,7 @@
       >
         Next
       </button>
-      <button>
+      <button @click="toLastPage">
         <LastPageIcon color="#42b883" />
       </button>
     </div>
@@ -39,7 +39,7 @@ import FirstPageIcon from '@/components/icons/FirstPageIcon.vue';
 import LastPageIcon from '@/components/icons/LastPageIcon.vue';
 const router = useRouter();
 
-defineProps({
+const props = defineProps({
   totalPages: {
     type: Number,
     required: true,
@@ -52,6 +52,16 @@ const increment = () => {
 };
 const decrement = () => {
   page.value--;
+  router.push({ query: { page: page.value, perPage: 10 } });
+  window.scrollTo(0, 0);
+};
+const toFirstPage = () => {
+  page.value = 1;
+  router.push({ query: { page: page.value, perPage: 10 } });
+  window.scrollTo(0, 0);
+};
+const toLastPage = () => {
+  page.value = props.totalPages;
   router.push({ query: { page: page.value, perPage: 10 } });
   window.scrollTo(0, 0);
 };

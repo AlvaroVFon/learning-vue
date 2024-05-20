@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import CoursesView from '@/views/CoursesView.vue';
 import CourseView from '@/views/CourseView.vue';
 import CategoriesView from '@/views/CategoriesView.vue';
 
@@ -14,7 +13,7 @@ const router = createRouter({
     {
       path: '/courses',
       name: 'courses',
-      component: CoursesView,
+      component: () => import('@/views/CoursesView.vue'),
     },
     {
       path: '/courses/:id',
@@ -29,12 +28,12 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/views/AuthView.vue'),
+      component: () => import('@/views/LoginView.vue'),
     },
     {
       path: '/signup',
       name: 'signup',
-      component: () => import('@/views/AuthView.vue'),
+      component: () => import('@/views/SignupView.vue'),
     },
   ],
 });

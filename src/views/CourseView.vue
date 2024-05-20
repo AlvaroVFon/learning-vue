@@ -29,7 +29,6 @@ const course = ref(null);
 
 const getCourse = async (url) => {
   const response = await api.getCourses(url);
-  console.log(response);
   course.value = response;
 };
 

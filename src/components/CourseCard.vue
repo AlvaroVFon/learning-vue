@@ -8,7 +8,7 @@
       <div className="flex flex-col items-end gap-4">
         <RouterLink
           @click="(e) => e.stopPropagation()"
-          to="/categories"
+          :to="`/courses?page=1&category=${course.category?.id}`"
           className="border border-muted text-accentDarker p-1 rounded-md hover:text-accent hover:border-accent duration-300 hover:bg-bgTertiary"
         >
           #{{ course.category?.name }}
@@ -28,25 +28,24 @@
   </article>
 </template>
 <script setup>
-  import { useRouter } from 'vue-router'
-  import CourseCardHeader from './CourseCardHeader.vue'
-  import CourseCardButtons from './CourseCardButtons.vue'
-  const router = useRouter()
-  defineProps({
-    course: {
-      type: Object,
-      required: true,
-    },
-  })
-  const handleClick = (courseId) => {
-    router.push({ name: 'course', params: { id: courseId } })
-    console.log('clicked')
-  }
+import { useRouter } from 'vue-router';
+import CourseCardHeader from './CourseCardHeader.vue';
+import CourseCardButtons from './CourseCardButtons.vue';
+const router = useRouter();
+defineProps({
+  course: {
+    type: Object,
+    required: true,
+  },
+});
+const handleClick = (courseId) => {
+  router.push({ name: 'course', params: { id: courseId } });
+};
 </script>
 
 <style scoped>
-  img {
-    width: 360px;
-    height: 160px;
-  }
+img {
+  width: 360px;
+  height: 160px;
+}
 </style>

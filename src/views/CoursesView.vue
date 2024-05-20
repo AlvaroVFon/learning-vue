@@ -29,7 +29,6 @@ const getCourses = async (url) => {
   courses.value = response.results;
   totalPages.value = response.totalPages;
 };
-console.log(route.fullPath);
 onMounted(() => {
   getCourses(route.fullPath);
 });

@@ -23,8 +23,8 @@
     <p class="text-primary">
       Don't you have an account?
       <RouterLink
-        to="/singup"
-        class="text-accent"
+        to="/signup"
+        class="text-accent font-semibold"
         >Sing up</RouterLink
       >
     </p>
@@ -48,9 +48,7 @@ const handleSubmit = (e) => {
   const Login = async () => {
     loading.value = true;
     try {
-      console.log(email.value, password.value);
       const response = await api.login(email.value, password.value);
-      console.log(response);
     } catch (error) {
       console.error(error);
     } finally {

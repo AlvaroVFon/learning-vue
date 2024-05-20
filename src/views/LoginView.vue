@@ -1,10 +1,10 @@
 <template>
   <div class="h-screen w-screen flex justify-center items-center">
-    <AuthForm />
+    <LoginForm />
   </div>
 </template>
 <script setup>
-import AuthForm from '../components/AuthForm.vue';
+import LoginForm from '../components/LoginForm.vue';
 </script>
 
 <style scoped></style>
