@@ -1,0 +1,14 @@
+<script setup>
+defineProps({
+  to: { type: String, default: '#' },
+  Icon: Object,
+  text: { type: String, default: 'SideBar Link' },
+})
+</script>
+<template>
+  <li>
+    <RouterLink :to="to" class="flex justify-between hover:text-accent duration-300"
+      >{{ text }}<component :is="Icon" class="h-6 w-6" />
+    </RouterLink>
+  </li>
+</template>
