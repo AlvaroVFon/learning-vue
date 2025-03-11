@@ -3,6 +3,8 @@ import LanguageController from '@/components/LanguageController.vue'
 import Themecontroller from '@/components/ThemeController.vue'
 import NavbarItemGroup from '@/components/NavbarItemGroup.vue'
 import LogoutIcon from '@/components/icons/LogoutIcon.vue'
+import { useLogin } from '@/composables/useLogin'
+const { logout, user } = useLogin()
 </script>
 <template>
   <div class="navbar bg-base-300 w-full flex items-center">
@@ -25,7 +27,11 @@ import LogoutIcon from '@/components/icons/LogoutIcon.vue'
     </div>
     <div class="hidden lg:flex justify-between items-center w-full px-2">
       <!-- Navbar menu content here -->
-      <div class="mx-2 px-2">CM -IM</div>
+      <div class="flex gap-2 items-center">
+        <div class="mx-2 px-2">CM -IM</div>
+        <p class="badge badge-info">{{ user.email }}</p>
+      </div>
+
       <NavbarItemGroup>
         <li>
           <!--TODO: import from .env -->
@@ -34,7 +40,7 @@ import LogoutIcon from '@/components/icons/LogoutIcon.vue'
         <li><LanguageController /></li>
         <li><Themecontroller /></li>
         <li>
-          <button class="p-2 hover:text-red-400" @click="console.log('logout')">
+          <button class="p-2 hover:text-red-400" @click="logout">
             <LogoutIcon />
           </button>
         </li>
