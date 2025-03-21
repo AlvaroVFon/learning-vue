@@ -7,6 +7,9 @@
       <tbody>
         <slot name="row" />
       </tbody>
+      <tfoot>
+        <slot name="footer" />
+      </tfoot>
     </table>
   </div>
 </template>

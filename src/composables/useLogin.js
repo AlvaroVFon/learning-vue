@@ -1,13 +1,14 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import apiService from '@/services/apiService'
 import { useLocalStorage } from '@/composables/useLocalStorage'
 
 const { set, get } = useLocalStorage()
 
+const user = ref(get('user') || null)
+
 function useLogin() {
   const router = useRouter()
-  const user = ref(get('user') || [])
   const loading = ref(false)
   const error = ref(null)
 
@@ -33,6 +34,8 @@ function useLogin() {
     }
   }
 
+  const isAuthenticated = computed(() => user.value !== null)
+
   function logout() {
     if (user.value) {
       user.value = null
@@ -41,7 +44,7 @@ function useLogin() {
     }
   }
 
-  return { login, logout, user, loading, error }
+  return { login, logout, isAuthenticated, user, loading, error }
 }
 
 export { useLogin }

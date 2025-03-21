@@ -4,7 +4,7 @@ import apiService from '@/services/apiService'
 export function useUsers() {
   const users = ref([])
   const error = ref(null)
-  const loading = ref(false)
+  const loading = ref(true)
 
   const fetchUsers = async () => {
     try {
@@ -12,8 +12,6 @@ export function useUsers() {
       users.value = await apiService.get('/users')
     } catch (err) {
       error.value = err
-    } finally {
-      loading.value = false
     }
   }
 
