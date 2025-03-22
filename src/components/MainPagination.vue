@@ -51,14 +51,6 @@ defineProps({
       name="options"
       aria-label="4"
     >
-      {{ currentPage + 1 }}
-    </button>
-    <button
-      class="join-item btn btn-square hover:text-primary"
-      type="radio"
-      name="options"
-      aria-label="4"
-    >
       Last
     </button>
   </div>

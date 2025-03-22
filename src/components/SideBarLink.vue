@@ -7,7 +7,7 @@ defineProps({
 </script>
 <template>
   <li>
-    <RouterLink :to="to" class="flex justify-between hover:text-accent duration-300"
+    <RouterLink :to="to" class="flex justify-between hover:text-primary duration-300"
       >{{ text }}<component :is="Icon" class="h-6 w-6" />
     </RouterLink>
   </li>
