@@ -1,9 +1,17 @@
-const getSearchFilters = () => {
+const getUsersFilters = () => {
   return [
     { label: 'Email', value: 'email' },
     { label: 'Username', value: 'username' },
-    { label: 'McId', value: 'mcid' },
+    { label: 'McId', value: 'mcid', selected: true },
   ]
 }
 
-export { getSearchFilters }
+const getClientsFilters = () => {
+  return [
+    { label: 'Auth', value: 'auth' },
+    { label: 'Api', value: 'api' },
+    { label: 'Reader', value: 'reader', selected: true },
+  ]
+}
+
+export { getUsersFilters, getClientsFilters }
