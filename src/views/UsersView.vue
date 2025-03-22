@@ -7,6 +7,7 @@ import TableHeader from '@/components/Table/TableHeader.vue'
 import TableRow from '@/components/Table/TableRow.vue'
 import MainPagination from '@/components/MainPagination.vue'
 import TableSkeleton from '@/components/Table/TableSkeleton.vue'
+import SearchBar from '@/components/SearchBar.vue'
 // import { useUsers } from '@/composables/useUsers.js'
 // const { loading, error, fetchUsers } = useUsers()
 
@@ -27,6 +28,9 @@ onMounted(() => {
   <Alert v-if="error" :message="error" alertType="error" />
   <TableSkeleton v-if="!error && loading" />
 
+  <div class="flex justify-end p-3">
+    <SearchBar v-if="!error && !loading" />
+  </div>
   <TableWrapper v-if="!error && !loading">
     <template #header>
       <TableHeader :headers="headers" v-if="!loading" />
