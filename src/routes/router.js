@@ -6,7 +6,6 @@ import ClientView from '@/views/ClientView.vue'
 import UserView from '@/views/UserView.vue'
 import { useLogin } from '@/composables/useLogin'
 
-// TODO: protect routes
 const routes = [
   { path: '/login', component: LoginView },
   {
