@@ -21,7 +21,7 @@ const toggleTheme = () => {
 </script>
 
 <template>
-  <label class="swap swap-rotate w-8 p-2 hover:text-blue-400">
+  <label class="swap swap-rotate w-8 p-2 hover:text-primary">
     <input type="checkbox" :checked="currentTheme === darkTheme" @change="toggleTheme" />
     <SunIcon />
     <MoonIcon />

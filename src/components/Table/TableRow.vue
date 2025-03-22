@@ -6,7 +6,7 @@ import EditIcon from '@/components/icons/EditIcon.vue'
 import DeleteIcon from '@/components/icons/DeleteIcon.vue'
 </script>
 <template>
-  <tr class="bg-base-200 hover:bg-base-300">
+  <tr class="bg-base-200 hover:bg-base-300 hover:text-primary">
     <template v-for="key in dataKeys" :key>
       <td>{{ props.data[key] }}</td>
     </template>

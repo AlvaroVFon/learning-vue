@@ -2,6 +2,7 @@
 import LanguageController from '@/components/LanguageController.vue'
 import Themecontroller from '@/components/ThemeController.vue'
 import NavbarItemGroup from '@/components/NavbarItemGroup.vue'
+import SettingsIcon from '@/components/icons/SettingsIcon.vue'
 import LogoutIcon from '@/components/icons/LogoutIcon.vue'
 import { useLogin } from '@/composables/useLogin'
 const { logout, user } = useLogin()
@@ -28,8 +29,7 @@ const { logout, user } = useLogin()
     <div class="hidden lg:flex justify-between items-center w-full px-2">
       <!-- Navbar menu content here -->
       <div class="flex gap-2 items-center">
-        <div class="mx-2 px-2">CM -IM</div>
-        <p class="badge badge-info">{{ user.email }}</p>
+        <p class="badge bg-base-100">{{ user.email }}</p>
       </div>
 
       <NavbarItemGroup>
@@ -39,6 +39,11 @@ const { logout, user } = useLogin()
         </li>
         <li><LanguageController /></li>
         <li><Themecontroller /></li>
+        <li>
+          <button class="p-2 hover:text-primary">
+            <SettingsIcon />
+          </button>
+        </li>
         <li>
           <button class="p-2 hover:text-red-400" @click="logout">
             <LogoutIcon />
