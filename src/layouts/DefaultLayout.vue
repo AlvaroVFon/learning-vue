@@ -18,7 +18,7 @@ const sidebarLinks = getLinks()
       <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
       <SideBar>
         <template v-for="link in sidebarLinks" :key="link.text">
-          <SideBarLink :to="link.to" :text="$t(link.text)" :Icon="link.Icon" />
+          <SideBarLink :to="link.to" :text="$t(link.text)" :Icon="link.Icon" :onClick="link.onClick"/>
         </template>
       </SideBar>
     </div>

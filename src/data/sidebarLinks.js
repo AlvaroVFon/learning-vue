@@ -7,6 +7,9 @@ import IdcardIcon from '@/components/icons/IdcardIcon.vue'
 import PaletteIcon from '@/components/icons/PaletteIcon.vue'
 import SettingsIcon from '@/components/icons/SettingsIcon.vue'
 import LogoutIcon from '@/components/icons/LogoutIcon.vue'
+import { useLogin } from '@/composables/useLogin'
+
+const { logout } = useLogin()
 
 export function getLinks() {
   return [
@@ -20,6 +23,6 @@ export function getLinks() {
     { to: '#', text: 'Employee Tags', Icon: IdcardIcon },
     { to: '#', text: 'Themes', Icon: PaletteIcon },
     { to: '#', text: 'Settings', Icon: SettingsIcon },
-    { to: '#', text: 'Logout', Icon: LogoutIcon },
+    { to: '#', text: 'Logout', Icon: LogoutIcon, onClick: logout },
   ]
 }
